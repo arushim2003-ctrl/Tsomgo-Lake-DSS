@@ -1206,8 +1206,20 @@ function updateSatelliteImage() {
 
     if (selectedYear) {
 
-        let imagePath =
-            `./images/${imageType}_${selectedYear}.png`;
+        let imageName = "";
+
+if (imageType === "TCC") {
+    imageName = "tcc";
+} else if (imageType === "FCC") {
+    imageName = "fcc";
+} else if (imageType === "NDWI") {
+    imageName = "ndwi";
+} else {
+    imageName = imageType;
+}
+
+let imagePath =
+    `./images/${imageName}_${selectedYear}.png`;
 
         let img =
             document.getElementById("satImage");
