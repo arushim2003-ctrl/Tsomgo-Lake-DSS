@@ -1,0 +1,45 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "Site": "Inlet" },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88.768845, 27.37585]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Site": "Point 1" },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88.76732, 27.37615]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Site": "Point 2" },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88.767271, 27.37619]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Site": "Point 3" },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88.766465, 27.37663]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Site": "Outlet" },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88.757558, 27.37473]
+      }
+    }
+  ]
+}
