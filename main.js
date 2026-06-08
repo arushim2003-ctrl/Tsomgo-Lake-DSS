@@ -1198,36 +1198,28 @@ new Chart(ctx, {
 // SATELLITE IMAGE VIEWER
 function updateSatelliteImage() {
 
-    let selectedYear =
-        document.getElementById("yearSelect").value;
+    const selectedYear = document.getElementById("yearSelect").value;
+    const imageType = document.getElementById("imageType").value;
+    const img = document.getElementById("satImage");
 
-    let imageType =
-        document.getElementById("imageType").value;
-
-    if (selectedYear) {
-
-        let imageName = "";
-
-if (imageType === "TCC") {
-    imageName = "tcc";
-} else if (imageType === "FCC") {
-    imageName = "fcc";
-} else if (imageType === "NDWI") {
-    imageName = "ndwi";
-} else {
-    imageName = imageType;
-}
-
-let imagePath =
-    `./images/${imageName}_${selectedYear}.png`;
-
-        let img =
-            document.getElementById("satImage");
-
-        img.src = imagePath;
-
-        img.style.display = "block";
+    if (!selectedYear || !imageType) {
+        img.style.display = "none";
+        return;
     }
+
+    const imageFileNames = {
+        TCC: "tcc",
+        FCC: "fcc",
+        NDWI: "ndwi",
+        LST: "LST",
+        NDTI: "NDTI",
+        NDCI: "NDCI"
+    };
+
+    const imageName = imageFileNames[imageType];
+
+    img.src = `images/${imageName}_${selectedYear}.png`;
+    img.style.display = "block";
 }
 
 document.getElementById("yearSelect")
