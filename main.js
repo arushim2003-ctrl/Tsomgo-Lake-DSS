@@ -1204,6 +1204,7 @@ function updateSatelliteImage() {
 
     if (!selectedYear || !imageType) {
         img.style.display = "none";
+        img.src = "";
         return;
     }
 
@@ -1218,15 +1219,18 @@ function updateSatelliteImage() {
 
     const imageName = imageFileNames[imageType];
 
-    img.src = `images/${imageName}_${selectedYear}.png`;
+    img.src = "";
+    img.src = `images/${imageName}_${selectedYear}.png?v=${Date.now()}`;
     img.style.display = "block";
 }
 
-document.getElementById("yearSelect")
-.addEventListener("change", updateSatelliteImage);
+document.getElementById("yearSelect").addEventListener("change", function () {
+    updateSatelliteImage();
+});
 
-document.getElementById("imageType")
-.addEventListener("change", updateSatelliteImage);
+document.getElementById("imageType").addEventListener("change", function () {
+    updateSatelliteImage();
+});
 
 // LST CHECKBOX
 document.getElementById("lstCheck")
